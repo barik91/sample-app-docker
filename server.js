@@ -6,7 +6,7 @@ const HOST = "0.0.0.0";
 
 // App
 const app = express();
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/", (req, res) => res.send(" welcome to aws cloud and Hello World!"));
 
 let server = app.listen(PORT, () => {
   console.log(`Running on http://${HOST}:${PORT}`);
