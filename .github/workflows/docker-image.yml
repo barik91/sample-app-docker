@@ -30,11 +30,11 @@ jobs:
     - name: Build and push Docker image
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-        IMAGE_NAME: sample-app
+        IMAGE_NAME: my-kube-pri-test
         DOCKERHUB_REPO: soumy2091/my-kube-pri-test
         # IMAGE_TAG: ${{ github.sha }}
         IMAGE_TAG: ${{ steps.tagversion.outputs.docker_tag }}
       run: |
         docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG .
         # docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG  
-        docker push $DOCKER_USERNAME/my-kube-pri-test:$IMAGE_TAG
+        docker push $DOCKER_USERNAME/$IMAGE_NAME:$IMAGE_TAG
